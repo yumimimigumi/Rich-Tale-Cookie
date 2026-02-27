@@ -1,19 +1,36 @@
 @charset "UTF-8";
-body {
-  background-color: antiquewhite;
 
+html {
+  box-sizing: border-box;
+}
+
+/*重要*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: antiquewhite;
   text-align: center;
 }
+
 h1 {
   font-family: "Cinzel", serif;
   font-size: 200px;
 }
-h2  {
+
+h2 {
   font-family: "Momo Signature", cursive;
   font-size: 40px;
   text-align: right;
   margin: 110px 50px 130px 0;
-  padding:  30px ;
+  padding: 30px;
 }
 
 .cinzel-uniquifier {
@@ -22,6 +39,7 @@ h2  {
   font-weight: weight;
   font-style: normal;
 }
+
 .momo-signature-regular {
   font-family: "Momo Signature", cursive;
   font-weight: 200;
@@ -42,21 +60,37 @@ img {
   margin: 0 auto;
   text-align: center;
 }
-h3 {
+
+h3
+
+/*.detail1 .detail2 .detail3 .detail4 .detail5 .detail6*/
+  {
   display: inline-block;
-  text-align: center;
+  text-align: left;
   font-weight: bold;
   font-size: 50px;
   font-family: "cinzel", serif;
+  margin: 20px;
+  padding: 20px;
 }
+
+p {
+  margin: 60px;
+  font-size: 30px;
+}
+
 .parent {
   text-align: center;
 }
+
 .child-p {
-  display: inline-block; /* 自身の幅を内容に合わせる */
-  text-align: left; /* 中身は左寄せ */
+  display: inline-block;
+  /* 自身の幅を内容に合わせる */
+  text-align: left;
+  /* 中身は左寄せ */
   font-family: "Zen Maru Gothic", sans-serif;
   font-weight: 400;
+  font-size: 30px
 }
 
 #header {
@@ -75,7 +109,7 @@ h3 {
 }
 
 #header .logo a {
-display: block;
+  display: block;
 }
 
 #header .navi .menu {
@@ -93,10 +127,11 @@ display: block;
 *レスポンシブ対応
 *
 */
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px) {
   main {
     padding-top: 60px;
   }
+
   #header {
     height: 60px;
     position: fixed;
@@ -104,47 +139,47 @@ display: block;
     left: 0;
     z-index: 10;
   }
+
   #header .logo {
     max-width: 120px;
   }
 }
 
 @media screen and (max-width: 767px) {
-#header .hamburger {
+  #header .hamburger {
 
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  position: fixed;
-  top: 5px;
-  right: 10px;
-  z-index: 30;
-  /* background:#d69f52;  */
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    z-index: 30;
+    /* background:#d69f52;  */
 
+  }
 
-}
+  #header .hamburger span {
+    width: 30px;
+    height: 3px;
+    background: rgb(88, 49, 1);
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    transition: all 0.4s;
+  }
 
-#header .hamburger span {
-  width: 30px;
-  height: 3px;
-  background: rgb(88, 49, 1);
-  display: inline-block;
-  position: absolute;
-  left: 10px;
-  transition: all 0.4s;
-}
+  #header.hamburger.span:nth-of-type(1) {
+    top: 16px;
+  }
 
-#header.hamburger.span:nth-of-type(1) {
-  top: 16px;
-}
+  #header.hamburger span:nth-of-type(2) {
+    top: 25px;
+  }
 
-#header.hamburger span:nth-of-type(2) {
-  top: 25px;
-}
-
-#header.hamburger span:nth-of-type(3) {
-  top: 34px;
-}
+  #header.hamburger span:nth-of-type(3) {
+    top: 34px;
+  }
 }
 
 
@@ -152,16 +187,19 @@ footer {
   background-color: #f2e6d9;
   text-align: center;
   padding: 10px 0;
-  margin-top: 20px;
+  margin-top: 600px;
+
 }
+
 footer p {
   margin: 0;
-  font-size: 14px;
+  font-size: 12px;
   color: #666;
 }
 
 html {
-    scroll-behavior: smooth; /* スムーススクロールを有効にする */
+  scroll-behavior: smooth;
+  /* スムーススクロールを有効にする */
 }
 
 
@@ -173,9 +211,8 @@ html {
 
 
 
-HTML CSSResult Skip Results Iframe
-EDIT ON
-#page_top{
+
+HTML CSSResult Skip Results Iframe EDIT ON #page_top {
   width: 100px;
   height: 60px;
   position: fixed;
@@ -184,40 +221,45 @@ EDIT ON
   background: #ef3f98;
   opacity: 0.6;
 }
-#page_top a{
-  position: relative;
-  display: block;
-  width: 100px;
-  height: 60px;
-  text-decoration: none;
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
-#page_top a::before{
-  font-family: 'Font Awesome 5 Free';
+
+#page_top a {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 64px;
+  height: auto;
+  z-index: 9999;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#page_top a::before {
+  /* font-family: "zen maru gothic", sans-serif;
   font-weight: 900;
   content: '\f102';
-  font-size: 25px;
-  color: #4725ac;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  top: -25px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  text-align: right;
+  font-size: 45px;
+  color: #4725ac; */
+  display: block;;
 }
-#page_top a::after{
+
+#page_top a::after {
   content: 'PAGE TOP';
-  font-size: 13px;
-  color: #b632df;
-  position: relative;
-  top: 30px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  text-align: right;
+  font-family: "Cinzel", serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: #a336c4;
+  display: block;
+  margin-top: 2px;
+
+
 }
 
 
@@ -250,7 +292,8 @@ EDIT ON
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 100;/* 重なり順を一番上にする */
+  z-index: 100;
+  /* 重なり順を一番上にする */
   cursor: pointer;
 }
 
@@ -279,40 +322,77 @@ EDIT ON
 }
 
 /* アイコンがクリックされたら真ん中の線を透明にする */
-#drawer_input:checked ~ .drawer_open span {
+.drawer_open.is-active span {
   background: rgba(255, 255, 255, 0);
 }
 
 /* アイコンがクリックされたらアイコンが×印になるように上下の線を回転 */
-#drawer_input:checked ~ .drawer_open span::before {
+.drawer_open.is-active span::before {
   bottom: 0;
   transform: rotate(45deg);
 }
 
-#drawer_input:checked ~ .drawer_open span::after {
+.drawer_open.is-active span::after {
   top: 0;
   transform: rotate(-45deg);
 }
 
 /* メニューのデザイン*/
 .nav_content {
-  width: 50%;
-  height: 30%;
+  width: 80%;
+  height: 100%;
   position: fixed;
   top: 0;
   z-index: 99;
   background: #c89d5d;
-  transition: .5s;
+  transition: opacity 1.5s, transform 1.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(100vw);
 }
+
+.nav_content.is-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 
 /* メニュー黒ポチを消す */
 .nav_list {
+  width: 100%;
   list-style: none;
 }
 
 /* アイコンがクリックされたらメニューを表示 */
-#drawer_input:checked ~ .nav_content {
-  right: 0;/* メニューを画面に入れる */
+.nav_content.is-active {
+  right: 0;
+  /* メニューを画面に入れる */
+}
+
+.nav_item a {
+  display: block;
+  padding: 30px;
+  border-bottom: solid 1px #CCC;
+  text-decoration: none;
+  color: #FFF;
+}
+
+.nav_item a:hover {
+  background-color: #cca974;
+}
+
+div.drawer_open {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  right: 20px;
+}
+
+div.icon {
+  justify-content: flex-end;
+  display: flex;
 }
 
 
